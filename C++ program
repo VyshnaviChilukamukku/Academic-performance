@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+class Base
+{
+public:
+char name[20];
+int academic_score;
+Base()
+{
+  cout<<"Enter a name of student"<<endl;
+  cin>>name;
+  cout<<"Enter a academic score of student"<<endl;
+  cin>>academic_score;
+}
+};
+class Class1:virtual public Base
+{
+public:
+int sports_sc;
+Class1()
+{
+  cout<<"Enter a sports score of student"<<endl;
+  cin>>sports_sc;
+}
+};
+class Class2:virtual public Base
+{
+public:
+int ex_curr_acti;
+Class2()
+{
+  cout<<"Enter extra curricular activities score of student"<<endl;
+  cin>>ex_curr_acti;
+}
+};
+class Total_marks:public Class1,public Class2
+{
+public:
+int total;
+Total_marks()
+{
+  cout<<"Name of Student is:"<<name<<endl;
+  cout<<"Academic score of student:"<<academic_score<<endl;
+  cout<<"Sports Score of student"<<sports_sc<<endl;
+  cout<<"Extra Curricular activities score of student:"<<ex_curr_acti<<endl;
+  total= academic_score +sports_sc + ex_curr_acti;
+  cout<<"Total Score of "<<name<<" is:"<<total;
+}
+};
+int main() {
+
+  Total_marks obj;
+
+  
+}
